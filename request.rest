@@ -1,0 +1,27 @@
+GET http://localhost:5000/products/
+
+###
+GET http://localhost:5000/products/2
+
+###
+POST http://localhost:5000/products/
+Content-Type: application/json
+
+{
+    "title" : "berita",
+    "file" : "",
+    "deskripsi": "berita baru"
+}
+
+###
+PATCH http://localhost:5000/products/:id
+Content-Type: application/json
+
+{
+    "title" : "berita",
+    "file" : "",
+    "deskripsi": "berita baru"
+}
+
+###
+DELETE http://localhost:5000/products/2
