@@ -6,7 +6,7 @@ const {DataTypes} = Sequelize;
 const Product = db.define('product',{
     name: DataTypes.STRING,
     image: DataTypes.STRING,
-    deskripsi: DataTypes.TEXT,
+    deskripsi: DataTypes.STRING,
     url: DataTypes.STRING
 },{
     freezeTableName: true
