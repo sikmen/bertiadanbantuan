@@ -9,7 +9,6 @@ Content-Type: application/json
 
 {
     "title" : "berita",
-    "file" : "",
     "deskripsi": "berita baru"
 }
 
