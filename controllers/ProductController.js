@@ -42,7 +42,7 @@ export const saveProduct = (req, res)=>{
         if(err) return res.status(500).json({msg: err.message});
         try {
             await Product.create({name: name, image: fileName, deskripsi: deskripsi, url: url});
-            res.status(201).json({msg: "Product Created Successfuly"});
+            res.status(201).json({msg: "News Created Successfuly"});
         } catch (error) {
             console.log(error.message);
         }
@@ -88,7 +88,7 @@ export const updateProduct = async(req, res)=>{
                 id: req.params.id
             }
         });
-        res.status(200).json({msg: "Product Updated Successfuly"});
+        res.status(200).json({msg: "News Updated Successfuly"});
     } catch (error) {
         console.log(error.message);
     }
@@ -110,7 +110,7 @@ export const deleteProduct = async(req, res)=>{
                 id : req.params.id
             }
         });
-        res.status(200).json({msg: "Product Deleted Successfuly"});
+        res.status(200).json({msg: "News Deleted Successfuly"});
     } catch (error) {
         console.log(error.message);
     }
