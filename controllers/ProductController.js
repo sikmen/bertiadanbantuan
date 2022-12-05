@@ -1,7 +1,9 @@
 import Product from "../models/ProductModel.js";
+import Helper from "../models/HelperModel.js";
 import path from "path";
 import fs from "fs";
 
+//crudBerita
 export const getProducts = async(req, res)=>{
     try {
         const response = await Product.findAll();
@@ -112,6 +114,67 @@ export const deleteProduct = async(req, res)=>{
         });
         res.status(200).json({msg: "News Deleted Successfuly"});
     } catch (error) {
+        console.log(error.message);
+    }
+}
+
+//formBantuan
+export const getHelp = async(req,res) =>{
+    try{
+        const response = await Helper.findAll();
+        res.status(200).json(response);
+    }catch(error){
+        console.log(error.message);
+    }
+}
+
+export const getHelpById = async(req,res) =>{
+    try{
+        const response = await Helper.findOne({
+            where:{
+                id: req.params.id
+            }
+        });
+        res.status(200).json(response);
+    }catch(error){
+        console.log(error.message);
+    }
+}
+
+//create
+export const createHelp  = async(req,res) =>{
+    try{
+        await Helper.create(req.body);
+        res.status(201).json({msg:"help create succesfully"});
+    }catch(error){
+        console.log(error.message);
+    }
+}
+
+//update
+export const updateHelp  = async(req,res) =>{
+    try{
+        await Helper.update(req.body,{
+            where: {
+                id: req.params.id
+            }
+        });
+        res.status(200).json({msg:"help updated"});
+    }catch(error){
+        console.log(error.message);
+    }
+}
+
+//delete
+export const deleteHelp = async(req,res) =>{
+    try{
+        await Helper.destroy({
+            where: {
+                id: req.params.id 
+            }
+        });
+        res.status(201).json({msg:"help deleted"});
+    }catch(error){
         console.log(error.message);
     }
 }
