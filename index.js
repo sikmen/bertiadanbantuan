@@ -12,4 +12,4 @@ app.use(FileUpload());
 app.use(express.static("public"));
 app.use(ProductRoute);
 
-app.listen(port, ()=> console.log('Server Up and Running...'));
+app.listen(port, ()=> console.log('Server Up and Running'));
